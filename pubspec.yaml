@@ -1,0 +1,92 @@
+name: epub_app
+description: A new Flutter project.
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.2 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  epubz:
+    git:
+      url: https://github.com/gitNTT/dart-epubz
+      ref: dev
+  cupertino_icons: ^1.0.2
+  google_mlkit_translation: ^0.6.0
+  uuid: ^3.0.7
+  flutter_html: ^3.0.0-alpha.5
+  palette_generator: ^0.3.3+2  #color palette
+  file_picker: ^5.2.10
+  bottom_inset_observer: ^3.1.0  #theo dõi thông tin về kích thước thanh điều hướng
+  url_launcher: ^6.1.11
+  stack: ^0.2.1
+  scrollable_positioned_list: ^0.3.8  #item list được định vị và có thể cuộn
+  flutter_phoenix: ^1.1.1  #restart
+  http: ^1.0.0
+  flutter_file_dialog: ^3.0.1  #chọn và quản lý file
+  path_provider: ^2.0.15
+  string_similarity: ^2.0.0
+  shake: ^2.2.0
+  font_awesome_flutter: ^10.4.0
+  flutter_markdown: ^0.6.14  #định dạng bằng các thẻ Markdown
+  equatable: ^2.0.5  #phương thức equals và hashCode
+  flutter_inappwebview: ^5.7.2+3
+  permission_handler: ^10.2.0
+  responsive_grid_list: ^1.3.2
+  flutter_rating_bar: ^4.0.1
+  velocity_x: ^4.0.0
+  fluttertoast: ^8.2.2
+  shared_preferences: ^2.0.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/index.html
+    - assets/images/cover.png
+    - assets/images/horizontalIcon.png
+    - assets/images/verticalIcon.png
+    - assets/fonts/variable/Literata.ttf
+    - assets/fonts/variable/RobotoMono.ttf
+    - assets/fonts/variable/Merriweather.ttf
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

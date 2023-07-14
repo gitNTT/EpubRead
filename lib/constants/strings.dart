@@ -1,0 +1,72 @@
+const library = 'Thư viện';
+const search = 'Tìm kiếm';
+const nameShelfEmpty= 'Tên kệ sách không thể để trống.';
+const nameShelfExists= 'Tên kệ sách đã tồn tại.';
+const deleteShelf = 'Đã xóa kệ sách ';
+
+const notLanguage = 'Không tìm thấy ngôn ngữ.';
+const notDownloadLanguage = 'Ngôn ngữ đã chọn chưa tải xuống.\nHãy tải xuống ngôn ngữ bạn muốn sử dụng.';
+const toStr = 'từ:';
+const fromStr = 'sang:';
+
+Map<String, String> languageNames = {
+  'af': 'Tiếng Afrikaans',
+  'sq': 'Tiếng Albania',
+  'ar': 'Tiếng Ả Rập',
+  'be': 'Tiếng Belarus',
+  'bn': 'Tiếng Bengali',
+  'bg': 'Tiếng Bulgaria',
+  'ca': 'Tiếng Catalan',
+  'zh': 'Tiếng Trung Quốc',
+  'hr': 'Tiếng Croatia',
+  'cs': 'Tiếng Séc',
+  'da': 'Tiếng Đan Mạch',
+  'nl': 'Tiếng Hà Lan',
+  'en': 'Tiếng Anh',
+  'eo': 'Tiếng Esperanto',
+  'et': 'Tiếng Estonia',
+  'fi': 'Tiếng Phần Lan',
+  'fr': 'Tiếng Pháp',
+  'gl': 'Tiếng Galicia',
+  'ka': 'Tiếng Georgia',
+  'de': 'Tiếng Đức',
+  'el': 'Tiếng Hy Lạp',
+  'gu': 'Tiếng Gujarati',
+  'ht': 'Tiếng Haiti',
+  'he': 'Tiếng Hebrew',
+  'hi': 'Tiếng Hindi',
+  'hu': 'Tiếng Hungary',
+  'is': 'Tiếng Iceland',
+  'id': 'Tiếng Indonesia',
+  'ga': 'Tiếng Ireland',
+  'it': 'Tiếng Ý',
+  'ja': 'Tiếng Nhật',
+  'kn': 'Tiếng Kannada',
+  'ko': 'Tiếng Hàn',
+  'lv': 'Tiếng Latvia',
+  'lt': 'Tiếng Litva',
+  'mk': 'Tiếng Macedonia',
+  'ms': 'Tiếng Malaysia',
+  'mt': 'Tiếng Malta',
+  'mr': 'Tiếng Marathi',
+  'no': 'Tiếng Na Uy',
+  'fa': 'Tiếng Ba Tư',
+  'pl': 'Tiếng Ba Lan',
+  'pt': 'Tiếng Bồ Đào Nha',
+  'ro': 'Tiếng Romania',
+  'ru': 'Tiếng Nga',
+  'sk': 'Tiếng Slovak',
+  'sl': 'Tiếng Slovenia',
+  'es': 'Tiếng Tây Ban Nha',
+  'sw': 'Tiếng Swahili',
+  'sv': 'Tiếng Thụy Điển',
+  'tl': 'Tiếng Tagalog',
+  'ta': 'Tiếng Tamil',
+  'te': 'Tiếng Telugu',
+  'th': 'Tiếng Thái',
+  'tr': 'Tiếng Thổ Nhĩ Kỳ',
+  'uk': 'Tiếng Ukraina',
+  'ur': 'Tiếng Urdu',
+  'vi': 'Tiếng Việt',
+  'cy': 'Tiếng Wales',
+};

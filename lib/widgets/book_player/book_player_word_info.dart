@@ -1,10 +1,7 @@
 import 'package:epub_app/widgets/confirm_popup.dart';
-import 'package:epub_app/widgets/message_popup.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mlkit_translation/google_mlkit_translation.dart';
-
 import '../../constants/strings.dart';
-import '../../models/word_definition.dart';
 import '../language_manager.dart';
 
 class BookPlayerWordInfo extends StatefulWidget {
@@ -161,7 +158,10 @@ class _TranslationDisplayState extends State<_TranslationDisplay> {
   @override
   void initState() {
     super.initState();
-    makeTranslator(widget.initialFromLanguage, widget.initialToLanguage);
+    fromLanguage = TranslateLanguage.vietnamese;
+    toLanguage = TranslateLanguage.english;
+    makeTranslator(fromLanguage, toLanguage);
+    //makeTranslator(widget.initialFromLanguage, widget.initialToLanguage);
   }
 
   void makeTranslator(
@@ -285,50 +285,50 @@ class _TranslationDisplayState extends State<_TranslationDisplay> {
   }
 }
 
-class _WordDefinitionDisplay extends StatelessWidget {
-  const _WordDefinitionDisplay({
-    Key? key,
-    required this.wordDefinition,
-  }) : super(key: key);
-
-  final WordDefinition wordDefinition;
-
-  @override
-  Widget build(BuildContext context) {
-    return MediaQuery.removePadding(
-      context: context,
-      removeTop: true,
-      child: ListView.separated(
-        // padding: const EdgeInsets.only(top: 10),
-        padding: EdgeInsets.zero,
-        itemCount: wordDefinition.meanings.length,
-        separatorBuilder: (context, index) => const SizedBox(height: 10),
-        itemBuilder: (context, index) {
-          final meaning = wordDefinition.meanings[index];
-          return Column(
-            children: [
-              SizedBox(
-                width: double.infinity,
-                child: Text(meaning.partOfSpeech,
-                    style: Theme.of(context).textTheme.bodyLarge!),
-              ),
-              ...meaning.definitions.asMap().entries.map(
-                    (entry) => Row(
-                      children: [
-                        const SizedBox(width: 20),
-                        Expanded(
-                          child: Text(
-                            "${entry.key + 1}: ${entry.value}",
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-            ],
-          );
-        },
-      ),
-    );
-  }
-}
+// class _WordDefinitionDisplay extends StatelessWidget {
+//   const _WordDefinitionDisplay({
+//     Key? key,
+//     required this.wordDefinition,
+//   }) : super(key: key);
+//
+//   final WordDefinition wordDefinition;
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MediaQuery.removePadding(
+//       context: context,
+//       removeTop: true,
+//       child: ListView.separated(
+//         // padding: const EdgeInsets.only(top: 10),
+//         padding: EdgeInsets.zero,
+//         itemCount: wordDefinition.meanings.length,
+//         separatorBuilder: (context, index) => const SizedBox(height: 10),
+//         itemBuilder: (context, index) {
+//           final meaning = wordDefinition.meanings[index];
+//           return Column(
+//             children: [
+//               SizedBox(
+//                 width: double.infinity,
+//                 child: Text(meaning.partOfSpeech,
+//                     style: Theme.of(context).textTheme.bodyLarge!),
+//               ),
+//               ...meaning.definitions.asMap().entries.map(
+//                     (entry) => Row(
+//                       children: [
+//                         const SizedBox(width: 20),
+//                         Expanded(
+//                           child: Text(
+//                             "${entry.key + 1}: ${entry.value}",
+//                             style: Theme.of(context).textTheme.bodyMedium,
+//                           ),
+//                         ),
+//                       ],
+//                     ),
+//                   ),
+//             ],
+//           );
+//         },
+//       ),
+//     );
+//   }
+// }

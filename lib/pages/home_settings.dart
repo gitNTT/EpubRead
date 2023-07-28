@@ -117,7 +117,7 @@ class _HomeSettingsState extends State<HomeSettings> {
                 ),
                 const AboutApp(
                   titleName: "",
-                  subName: "EPubApp",
+                  subName: "ePubApp",
                 ),
                 50.heightBox,
                 Row(

@@ -172,7 +172,7 @@ class _BookInfoSettingsState extends State<BookInfoSettings> {
                           backgroundColor:
                               MaterialStateProperty.all(Colors.blueAccent),
                         ),
-                        child: const Text('Cập nhật'),
+                        child: const Text('Lưu'),
                         onPressed: () async {
                           if (_bookName.text.trim().isEmpty) {
                             getCustomToast.show("Chưa nhập tên sách", context);

@@ -11,7 +11,7 @@ import '../widgets/add_book_to_shelf.dart';
 import '../widgets/books_viewer.dart';
 import 'book_info.dart';
 import 'book_info_settings.dart';
-import 'book_player.dart';
+import 'book_reader.dart';
 
 class Search extends StatefulWidget {
   const Search({

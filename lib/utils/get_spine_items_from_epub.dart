@@ -1,5 +1,4 @@
 import 'package:epubz/epubz.dart';
-// ignore: implementation_imports
 import 'package:epubz/src/schema/opf/epub_manifest_item.dart';
 
 List<EpubManifestItem> getSpineItemsFromEpub(EpubBook epubBook) {

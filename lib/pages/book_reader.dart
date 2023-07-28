@@ -23,8 +23,8 @@ import 'package:stack/stack.dart' as stack;
 import '../widgets/epub_renderer/epub_location.dart';
 import '../widgets/epub_renderer/epub_renderer.dart';
 import 'book_player_navigation_view.dart';
-import 'book_player_note_editor.dart';
-import 'book_player_notes_viewer.dart';
+import 'book_note_editor.dart';
+import 'book_notes_viewer.dart';
 import 'book_player_search.dart';
 
 class BookPlayer extends StatefulWidget {
@@ -427,63 +427,61 @@ class _BookPlayer extends State<BookPlayer>
                     const Spacer(),
                     if (showToolBar)
                       Container(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).primaryColor,
-                            borderRadius: const BorderRadius.all(
-                              Radius.circular(10),
-                            ),
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).primaryColor,
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(10),
                           ),
-                          height: 50,
-                          width:
-                              min(400, MediaQuery.of(context).size.width - 40),
-                          child: Center(
-                            child: BookPlayerToolbar(
-                              text: highlightedText,
-                              onCopy: () {
-                                Clipboard.setData(
-                                    ClipboardData(text: highlightedText));
-                                hideToolbar();
-                              },
-                              onWebSearch: () {
-                                launchUrl(
-                                  Uri(
-                                    scheme: 'https',
-                                    host: 'www.google.com',
-                                    path: '/search',
-                                    queryParameters: {
-                                      'q': highlightedText,
-                                    },
-                                  ),
-                                  mode: LaunchMode.externalApplication,
-                                );
-                              },
-                              onAddNote: (color) async {
-                                widget.book.savedData!.data.notes.add(
-                                  SavedNote(
-                                    id: uuid.v4(),
-                                    color: color,
-                                    highlightedText: highlightedText,
-                                    page: bookController!
-                                        .currentController.location.page,
-                                    description: "",
-                                    rangesData: highlightedRanges,
-                                  ),
-                                );
-                                //await widget.book.savedData!.saveData();
-                                bookController!.setLocation(
-                                  bookController!.currentController.location,
-                                  forced: true,
-                                );
-                              },
-                              onSearch: () =>
-                                  openSearch(query: highlightedText),
-                              translate: () {
-                                setState(() {
-                                  isTranslateSelected = true;
-                                });
-                              },
-                            ),
+                        ),
+                        height: 50,
+                        width:
+                            min(400, MediaQuery.of(context).size.width - 40),
+                        child: Center(
+                          child: BookPlayerToolbar(
+                            text: highlightedText,
+                            onCopy: () {
+                              Clipboard.setData(
+                                  ClipboardData(text: highlightedText));
+                              hideToolbar();
+                            },
+                            onWebSearch: () {
+                              launchUrl(
+                                Uri(
+                                  scheme: 'https',
+                                  host: 'www.google.com',
+                                  path: '/search',
+                                  queryParameters: {
+                                    'q': highlightedText,
+                                  },
+                                ),
+                                mode: LaunchMode.externalApplication,
+                              );
+                            },
+                            onAddNote: (color) async {
+                              widget.book.savedData!.data.notes.add(
+                                SavedNote(
+                                  id: uuid.v4(),
+                                  color: color,
+                                  highlightedText: highlightedText,
+                                  page: bookController!
+                                      .currentController.location.page,
+                                  description: "",
+                                  rangesData: highlightedRanges,
+                                ),
+                              );
+                              //await widget.book.savedData!.saveData();
+                              bookController!.setLocation(
+                                bookController!.currentController.location,
+                                forced: true,
+                              );
+                            },
+                            onSearch: () =>
+                                openSearch(query: highlightedText),
+                            translate: () {
+                              setState(() {
+                                isTranslateSelected = true;
+                              });
+                            },
                           ),
                         ),
                       ),
@@ -497,7 +495,7 @@ class _BookPlayer extends State<BookPlayer>
                               color: backgroundColor,
                               width: min(
                                   400, MediaQuery.of(context).size.width - 40),
-                              height: 500,
+                              height: 400,
                               child: IgnorePointer(
                                 ignoring: !showWordInfo,
                                 child: BookPlayerWordInfo(

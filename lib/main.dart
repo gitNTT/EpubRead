@@ -4,7 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:google_mlkit_translation/google_mlkit_translation.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 
@@ -35,13 +35,22 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   SettingsManager? settingsManager;
   bool ready = false;
+  final modelManager = OnDeviceTranslatorModelManager();
 
   @override
   void initState() {
-    getExternalStorageDirectory().then((path) {
+    getExternalStorageDirectory().then((path) async {
       applyPath(path!);
+      await _downloadDefaultLanguage();
     });
     super.initState();
+  }
+
+  Future<void> _downloadDefaultLanguage() async {
+    final isVietnameseDownloaded = await modelManager.isModelDownloaded('vi');
+    if (!isVietnameseDownloaded) {
+      await modelManager.downloadModel('vi');
+    }
   }
 
   applyPath(Directory directory) async {

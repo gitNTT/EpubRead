@@ -218,13 +218,19 @@ class _BookThemeSettingsState extends State<BookThemeSettings> {
                     onDecrease: () {
                       if (widget.styleProperties.fontSizeMultiplier > 0.8) {
                         widget.styleProperties.fontSizeMultiplier -= 0.1;
+                        widget.onUpdateStyle();
+                      }
+                      if (widget.styleProperties.lineHeightMultiplier > 1) {
                         widget.styleProperties.lineHeightMultiplier -= 0.1;
                         widget.onUpdateStyle();
                       }
                     },
                     onIncrease: () {
-                      if (widget.styleProperties.fontSizeMultiplier < 2.5) {
+                      if (widget.styleProperties.fontSizeMultiplier < 2.3) {
                         widget.styleProperties.fontSizeMultiplier += 0.1;
+                        widget.onUpdateStyle();
+                      }
+                      if (widget.styleProperties.lineHeightMultiplier < 2.5) {
                         widget.styleProperties.lineHeightMultiplier += 0.1;
                         widget.onUpdateStyle();
                       }
@@ -319,7 +325,7 @@ class _BookThemeSettingsState extends State<BookThemeSettings> {
                       }
                     },
                     onIncrease: () {
-                      if (widget.styleProperties.lineHeightMultiplier < 2) {
+                      if (widget.styleProperties.lineHeightMultiplier < 2.5) {
                         widget.styleProperties.lineHeightMultiplier += 0.1;
                         widget.onUpdateStyle();
                       }

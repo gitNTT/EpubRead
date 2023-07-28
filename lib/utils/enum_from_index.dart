@@ -1,3 +1,4 @@
+//SortType & ViewType
 T enumFromIndex<T extends Enum>(
   List<T> values,
   dynamic index, {

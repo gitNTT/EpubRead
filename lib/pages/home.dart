@@ -6,13 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:google_mlkit_translation/google_mlkit_translation.dart';
 import 'package:http/http.dart';
-import 'package:permission_handler/permission_handler.dart';
 import '../constants/strings.dart';
 import '../managers/settings_manager.dart';
 import '../models/book.dart';
 import '../widgets/clean_app_bar.dart';
-import 'book_player.dart';
-import '../widgets/book_downloader_interface.dart';
+import 'book_reader.dart';
+import '../widgets/upload_book.dart';
 import 'library.dart';
 import 'search.dart';
 
@@ -246,7 +245,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                 final getter = BookDownloaderInterfaceBytes(
                   bookFileBytes: await File(files!.single.path!).readAsBytes(),
                 );
-                final status = await Permission.storage.status;
+
 
                 await showDialog(
                   context: context,

@@ -70,18 +70,17 @@ class _BookDownloaderInterfaceState extends State<BookDownloaderInterface> {
     final status = await Permission.storage.status;
     switch (status) {
       case PermissionStatus.denied:
-        print("loi 1--------------------------");
+        //print("loi 1--------------------------");
         await Permission.storage.request();
-
         return;
       case PermissionStatus.granted:
         break;
       case PermissionStatus.restricted:
-        print("loi 2--------------------------");
+       //print("loi 2--------------------------");
       case PermissionStatus.limited:
-        print("loi 3--------------------------");
+        //print("loi 3--------------------------");
       case PermissionStatus.permanentlyDenied:
-        print("loi 4--------------------------");
+        //print("loi 4--------------------------");
 
         setState(() {
           stage = Stage.error;

@@ -5,7 +5,7 @@ const nameShelfExists= 'Tên kệ sách đã tồn tại.';
 const deleteShelf = 'Đã xóa kệ sách ';
 
 const notLanguage = 'Không tìm thấy ngôn ngữ.';
-const notDownloadLanguage = 'Ngôn ngữ đã chọn chưa tải xuống.\nHãy tải xuống ngôn ngữ bạn muốn sử dụng.';
+const notDownloadLanguage = 'Ngôn ngữ đã chọn chưa tải xuống.\nTải xuống ngôn ngữ bạn muốn sử dụng.';
 const toStr = 'từ:';
 const fromStr = 'sang:';
 

@@ -19,8 +19,6 @@ class LanguageManager extends StatefulWidget {
 
 class _LanguageManagerState extends State<LanguageManager> {
 
-
-
   Map<String, bool> downloadingLanguages = {};
 
   Future<void> _downloadLanguage(String languageCode) async {

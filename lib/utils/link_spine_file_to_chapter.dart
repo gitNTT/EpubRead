@@ -51,7 +51,3 @@ EpubChapter? linkSpineFileToChapter(EpubBook epubBook, int spineFileIndex,
     return currentChapter;
   }
 }
-
-/*
-
-*/

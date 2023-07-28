@@ -137,7 +137,6 @@ class _HomeSettingsState extends State<HomeSettings> {
                       onPressed: () async {
                         final tempDir = await getTemporaryDirectory();
                         final tempZipPath = p.join(tempDir.path, "data.zip");
-
                         final encoder = ZipFileEncoder();
                         await _zipDirectory(
                           encoder,

@@ -233,7 +233,6 @@ class BookSavedData {
 
     if (epubBook.CoverImage == null) {
       final data = await rootBundle.load("assets/images/cover.png");
-
       coverImageData = img.decodeImage(data.buffer.asUint8List())!;
     } else {
       coverImageData = epubBook.CoverImage!;
@@ -244,6 +243,7 @@ class BookSavedData {
       coverImageData.height.toDouble(),
     );
 
+    //ghi dữ liệu
     await coverFile.writeAsBytes(img.encodePng(coverImageData));
 
     Color coverColor = (await PaletteGenerator.fromByteData(EncodedImage(
@@ -254,6 +254,7 @@ class BookSavedData {
             .dominantColor
             ?.color ??
         const Color.fromARGB(255, 169, 169, 169);
+
 
     await epubFile.writeAsBytes(epubBytes);
     await dataFile.writeAsString(
@@ -291,6 +292,7 @@ class BookSavedData {
     );
   }
 
+  //đọc dữ liệu
   static Future<BookSavedData> load(Directory directory) async {
     final path = directory.path;
     final File dataFile = File(p.join(path, "data.json"));
@@ -335,10 +337,6 @@ class BookSavedData {
       jsonEncode(data.toJson()),
     );
   }
-
-  // double get readProgress =>
-  //     (data.consistentLocation.page + data.progressSpine) /
-  //     (data.wordsPerSpineItem.length);
 
   bool get isFinished =>
       data.consistentLocation.page >= (data.wordsPerSpineItem.length - 1) &&

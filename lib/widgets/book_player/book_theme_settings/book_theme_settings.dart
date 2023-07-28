@@ -420,7 +420,7 @@ class _BookThemeSettingsState extends State<BookThemeSettings> {
                         widget.styleProperties.wordSpacingAdder = 0;
                         widget.onUpdateStyle();
                       },
-                      child: Text("Về mặc định"),
+                      child: Text("Mặc định"),
                       style: ButtonStyle(
                         minimumSize: MaterialStateProperty.all(Size(100, 35)),
                         foregroundColor:

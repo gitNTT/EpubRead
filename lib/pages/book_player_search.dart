@@ -208,13 +208,10 @@ class _BookPlayerSearchState extends State<BookPlayerSearch> {
       start = match.end;
     }
 
-
-
     if (start < originalText.length) {
       final textAfterMatch = originalText.substring(start);
       textSpans.add(TextSpan(text: textAfterMatch));
     }
-
 
     return Text.rich(
       TextSpan(
@@ -243,13 +240,19 @@ class _BookPlayerSearchState extends State<BookPlayerSearch> {
             TextFormField(
               controller: textEditingController,
               onFieldSubmitted: (String value) async {
-                setState(() {
-                  results = search(value);
-                });
-                List<SearchResults> searchResults = await results;
-                _updateNumberOfResults(searchResults);
-                getCustomToast.show("Số kết quả tìm được: $numberOfResults", context);
-
+                if (value.trim().isNotEmpty) {
+                  setState(() {
+                    results = search(value);
+                  });
+                  List<SearchResults> searchResults = await results;
+                  _updateNumberOfResults(searchResults);
+                  getCustomToast.show(
+                      "Số kết quả tìm được: $numberOfResults", context);
+                } else {
+                  return;
+                  // getCustomToast.show(
+                  //     "Chưa nhập thông tin cần tìm!", context);
+                }
               },
             ),
             Expanded(
@@ -292,7 +295,6 @@ class _BookPlayerSearchState extends State<BookPlayerSearch> {
                 },
               ),
             ),
-
           ],
         ),
       ),

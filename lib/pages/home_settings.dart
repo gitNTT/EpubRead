@@ -10,10 +10,9 @@ import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:google_mlkit_translation/google_mlkit_translation.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../managers/settings_manager.dart';
-import '../utils/remove_leading_zeros.dart';
 import '../widgets/aboutApp.dart';
 import '../widgets/language_manager.dart';
-import '../widgets/settings_enum_dropdown.dart';
+import '../widgets/enum_theme.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
 

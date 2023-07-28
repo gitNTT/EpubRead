@@ -119,11 +119,8 @@ class _BooksViewerState extends State<BooksViewer> {
         view = ResponsiveGridList(
           minItemsPerRow: 3,
           horizontalGridSpacing: 0,
-          // Horizontal space between grid items
           verticalGridMargin: 0,
-          // Vertical space around the grid
           minItemWidth: 150,
-          // The minimum item width (can be smaller, if the layout constraints are smaller)
           children: books.asMap().entries.map(
             (entry) {
               final index = entry.key;

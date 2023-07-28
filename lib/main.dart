@@ -10,7 +10,7 @@ import 'package:flutter/scheduler.dart' show timeDilation;
 
 import 'managers/settings_manager.dart';
 import 'pages/home.dart';
-import 'widgets/custom_underline_tab_indicator.dart';
+import 'widgets/template/custom_underline_tab_indicator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

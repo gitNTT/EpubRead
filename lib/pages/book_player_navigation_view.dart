@@ -2,7 +2,7 @@ import 'package:collection/collection.dart';
 import 'package:epubz/epubz.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
-import '../widgets/custom_expansion_tile.dart';
+import '../widgets/template/custom_expansion_tile.dart';
 import '../widgets/clean_app_bar.dart';
 import '../widgets/epub_renderer/epub_location.dart';
 

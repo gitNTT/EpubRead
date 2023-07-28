@@ -170,16 +170,34 @@ class _TranslationDisplayState extends State<_TranslationDisplay> {
   ) async {
     if (!await widget.modelManager.isModelDownloaded(from.bcpCode) ||
         !await widget.modelManager.isModelDownloaded(to.bcpCode)) {
-      if (await confirmPopup(context, notLanguage, notDownloadLanguage) ==
-          true) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => LanguageManager(
-              modelManager: translatorModelManager,
+      if (!await widget.modelManager.isModelDownloaded(from.bcpCode)) {
+        if (await confirmPopup(
+                context,
+                "Chưa tải ${languageNames[from.bcpCode]}",
+                "Đến trang tải xuống gói ngôn ngữ") ==
+            true) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => LanguageManager(
+                modelManager: translatorModelManager,
+              ),
             ),
-          ),
-        );
+          );
+        }
+      } else {
+        if (await confirmPopup(context, "Chưa tải ${languageNames[to.bcpCode]}",
+                "Đến trang tải xuống gói ngôn ngữ") ==
+            true) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => LanguageManager(
+                modelManager: translatorModelManager,
+              ),
+            ),
+          );
+        }
       }
 
       setState(() {});

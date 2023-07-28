@@ -55,7 +55,7 @@ class BookDownloaderInterface extends StatefulWidget {
 }
 
 class _BookDownloaderInterfaceState extends State<BookDownloaderInterface> {
-  final Client httpClient = Client();
+  //final Client httpClient = Client();
   final uuid = const Uuid();
   double? downloadProgress;
   Stage stage = Stage.idle;
